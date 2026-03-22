@@ -54,7 +54,7 @@ For traefik Gateway API Controller we need to have the Kubernetes Gateway API co
 To configure Traefik for Gateway API support:
 
 1. Install **Gateway API CRDs**
-2. Install **Traefik with Gateway API enabled**
+2. Install **Traefik with Gateway API enabled**. We can use values from here: https://github.com/warlock601/ArgoCD/blob/main/setup-gateway-api/values/values-traefik.yaml
 3. Create a **GatewayClass**
 4. Create a **Gateway**
 5. Create an **HTTPRoute**
