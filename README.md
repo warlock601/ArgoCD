@@ -57,9 +57,6 @@ To configure Traefik for Gateway API support:
 4. Create a **Gateway**
 5. Create an **HTTPRoute**
 
-```bash
-
-```
 
 ---
 
