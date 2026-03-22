@@ -51,7 +51,8 @@ This enables:
 
 For traefik Gateway API Controller we need to have the Kubernetes Gateway API configured. The CRDs for Gateway API are not installed by default. </br>
 </br>
-To configure Traefik for Gateway API support:
+To configure Traefik for Gateway API support: We can either follow this: https://github.com/warlock601/ArgoCD/blob/main/traefik-setup-instructions.md </br>
+OR Follow these steps:
 
 1. Install **Gateway API CRDs**
 2. Install **Traefik with Gateway API enabled**. We can use values from here: https://github.com/warlock601/ArgoCD/blob/main/setup-gateway-api/values/values-traefik.yaml
