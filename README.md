@@ -49,6 +49,8 @@ This enables:
 
 **Traefik acts as a Gateway API controller.**
 
+For traefik Gateway API Controller we need to have the Kubernetes Gateway API configured. The CRDs for Gateway API are not installed by default. </br>
+</br>
 To configure Traefik for Gateway API support:
 
 1. Install **Gateway API CRDs**
