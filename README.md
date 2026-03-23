@@ -39,7 +39,7 @@ Traefik reads the **HTTPRoute definition**, specifically the configured **traffi
 
 This enables:
 
-- Precise percentage-based routing  
+- Precise percentage-based routing (like 1%, 3%, 6% etc)
 - Independent control from replica count  
 - Fine-grained rollout steps such as **95:5**, **99:1**, etc.
 
