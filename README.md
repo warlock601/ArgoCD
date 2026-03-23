@@ -76,24 +76,25 @@ Using this approach, you can achieve precise traffic splits such as:
 
 ## Argo Rollouts + Gateway API Integration
 
-We create the required **Gateway API resources**:
+We create the required **Gateway API resources** to route traffic to our application:
 
 - **Gateway**
 - **HTTPRoute**
 
-Then we define an **Argo Rollout** using the `trafficRouting` block to control that HTTPRoute.
+Then we define an **Argo Rollout** using the `trafficRouting` block to control that HTTPRoute. We will see that with exactly 1 canary pod, we can send exactly 5% of traffic to it. Basically what is going to happen is that the public traffic coming by the gateway with a match to the PathPrefix (here "/") is going to hit the HTTPRoute that we create and HTTPRoute will be configured by Argo-Rollouts here so Argo-Rollouts will dynamically adjust the weigths in this HTTPRoute resource to split the traffic accordingly so instead of using the no. of pods in both ReplicaSets as a criterion to define the traffic-split, we now have precise splitting.
 
-### Request Flow
+### Request Flow </br>
+<img width="1468" height="906" alt="image" src="https://github.com/user-attachments/assets/8eb0fb01-3532-4744-ba50-14a6fabc67f0" />
 
 1. Public traffic enters through the **Gateway**
 2. A **PathPrefix match** (for example `/`) sends traffic to the **HTTPRoute**
 3. The **HTTPRoute** forwards traffic to:
    - Stable Service
    - Canary Service
-4. **Argo Rollouts dynamically updates HTTPRoute weights during rollout**
+4. **Argo Rollouts dynamically updates HTTPRoute weights during rollout** </br>
 
-This means:
 
-> Traffic is distributed based on **percentage**, not based on **number of pods**.
+
+This means Traffic is distributed based on **percentage**, not based on **number of pods**.
 
 ---
